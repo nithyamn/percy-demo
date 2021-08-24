@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class PercyTest {
     @Test
-    public void test() throws InterruptedException {
+    public void test() throws Exception {
         System.setProperty("webdriver.chrome.driver", "/Users/nithyamani/Desktop/chromedrivers/chromedriver91");
         WebDriver driver = new ChromeDriver();
         Percy percySnapshots = new Percy(driver);
