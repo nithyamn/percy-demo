@@ -1,0 +1,8 @@
+target/
+.percy.old.yml
+browserstack.err
+output.txt
+package-lock.json
+PercyJavaCLI.iml
+.DS_Store
+node_modules/

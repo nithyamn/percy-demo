@@ -1,0 +1,13 @@
+version: 2
+snapshot:
+  widths:
+    - 375
+    - 1280
+  minHeight: 1024
+  percyCSS: ""
+discovery:
+  allowedHostnames: ["localhost", "bstackdemo.com"]
+  networkIdleTimeout: 100
+  disableCache: false
+  launch-options:
+    headless: true
