@@ -8,3 +8,5 @@ PercyJavaCLI.iml
 node_modules/
 .idea/
 *.log
+runTest.sh
+startServer.sh
