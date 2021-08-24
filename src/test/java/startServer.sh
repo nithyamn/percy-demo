@@ -1,3 +1,0 @@
-export PERCY_TOKEN=1ebbbadee4037b650fe12fd6ba0bcdd6e0c5db40c3670dc5c40757a17635657
-npx percy exec:start
-
