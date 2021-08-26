@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Sample">
-    <test name="Sample">
+<suite name="Sample" thread-count="2" parallel="tests">
+    <test name="Sample1">
+        <parameter name="test_name" value="sample1"></parameter>
+        <classes>
+            <class name="PercyTest"/>
+        </classes>
+    </test>
+    <test name="Sample2">
+        <parameter name="test_name" value="sample2"></parameter>
         <classes>
             <class name="PercyTest"/>
         </classes>
