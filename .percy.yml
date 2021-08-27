@@ -4,7 +4,10 @@ snapshot:
     - 375
     - 1280
   minHeight: 1024
-  percyCSS:
+  percyCSS: |
+    .change-font{
+      font-family: "Times New Roman", Times, serif;
+    }
 discovery:
   allowedHostnames: ["localhost", "bstackdemo.com"]
   networkIdleTimeout: 100

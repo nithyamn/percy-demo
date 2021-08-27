@@ -53,3 +53,6 @@ p{
 	margin: auto;
 	margin-bottom: 15px;
 }
+.change-font{
+    font-family: "Lucida Console", "Courier New", monospace;
+}
