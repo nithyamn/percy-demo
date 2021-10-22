@@ -8,11 +8,11 @@
             <class name="PercyTest"/>
         </classes>
     </test>
-    <test name="Sample2">
-        <parameter name="test_name" value="stag"></parameter>
-        <parameter name="url" value="http://localhost/SampleWebsite/index.php"></parameter>
-        <classes>
-            <class name="PercyTest"/>
-        </classes>
-    </test>
+<!--    <test name="Sample2">-->
+<!--        <parameter name="test_name" value="stag"></parameter>-->
+<!--        <parameter name="url" value="http://localhost/SampleWebsite/index.php"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="PercyTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
