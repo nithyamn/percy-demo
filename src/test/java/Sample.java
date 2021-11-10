@@ -27,6 +27,9 @@ public class Sample {
     public void test() throws Exception {
         ChromeOptions options = new ChromeOptions();
 
+        String qliksenseURL = "";
+        String qliksenseUsername = "";
+        String qliksensePass = "";
         //options.addArguments("--headless");
         //options.addArguments("--start-maximized");
 
@@ -37,14 +40,12 @@ public class Sample {
 
         //Get basic auth value
         //System.out.println("Authorization: "+basicAuthHeaderGeneration("admin","admin"));
-        //Authorization: Basic YWRtaW46YWRtaW4=
         percy = new Percy(driver);
 
         //driver.get("https://the-internet.herokuapp.com/basic_auth");
-        driver.get("https://0bik9ag28kxjqaj.ap.qlikcloud.com/sense/app/0f8ed451-620a-4e6b-9080-05fc2b1e0c98/sheet/46ec0784-7290-426c-8d1a-bcb1e5744fd9/state/analysis/hubUrl/%2Fitem%2F60745f4a70ffa3dff5cdf0f0%2Fdetails");
-
-        driver.findElement(By.xpath("//*[@id=\"lock-container\"]/div/div/form/div/div/div[3]/span/div/div/div/div/div/div/div/div/div/div[1]/div[2]/input")).sendKeys("nithya@browserstack.com");
-        driver.findElement(By.xpath("//*[@id=\"lock-container\"]/div/div/form/div/div/div[3]/span/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/input")).sendKeys("Reset@me15");
+        driver.get(qliksenseURL);
+        driver.findElement(By.xpath("//*[@id=\"lock-container\"]/div/div/form/div/div/div[3]/span/div/div/div/div/div/div/div/div/div/div[1]/div[2]/input")).sendKeys(qliksenseUsername);
+        driver.findElement(By.xpath("//*[@id=\"lock-container\"]/div/div/form/div/div/div[3]/span/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/input")).sendKeys(qliksensePass);
         percy.snapshot("Qliksense Login page");
         Thread.sleep(3000);
         //takeSnapShot(driver,"src/test/upload_file/loginPage.png");
