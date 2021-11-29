@@ -9,7 +9,7 @@ public class PercyTest {
     @Parameters({"test_name","url"})
     @Test
     public void test(String test_name, String url) throws Exception {
-        System.setProperty("webdriver.chrome.driver", "/Users/nithyamani/Desktop/Tools/chromedrivers/chromedriver94");
+        System.setProperty("webdriver.chrome.driver", "/Users/nithyamani/Desktop/Tools/chromedrivers/chromedriver96");
         WebDriver driver = new ChromeDriver();
         Percy percySnapshots = new Percy(driver);
         driver.get(url);
