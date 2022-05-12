@@ -14,10 +14,11 @@ public class PercyTest {
         Percy percySnapshots = new Percy(driver);
         driver.get(url);
         percySnapshots.snapshot("Main Page "+test_name);
-        driver.findElement(By.linkText("Contact Us!")).click();
 
         driver.findElement(By.linkText("Contact Us!")).click();
         percySnapshots.snapshot("Contact Us Page "+test_name);
+
+        driver.findElement(By.cssSelector("button[data-button-id='button1']")).getAttribute("value");
 
         Thread.sleep(2000);
         driver.quit();
