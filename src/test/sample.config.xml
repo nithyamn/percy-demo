@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Sample" thread-count="2" parallel="tests">
-<!--    <test name="Sample1">-->
-<!--        <parameter name="test_name" value="stag"></parameter>-->
-<!--        <parameter name="url" value="http://localhost/SampleWebsite/index.php"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="PercyTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-    <test name="Sample2">
-        <parameter name="test_name" value="prod"></parameter>
-        <parameter name="url" value="http://localhost:3000"></parameter>
+    <test name="Sample1">
+        <parameter name="test_name" value="stag"></parameter>
+        <parameter name="url" value="http://localhost/SampleWebsite/index.php"></parameter>
         <classes>
             <class name="PercyTest"/>
         </classes>
     </test>
+<!--    <test name="Sample2">-->
+<!--        <parameter name="test_name" value=""></parameter>-->
+<!--        <parameter name="url" value=""></parameter>-->
+<!--        <classes>-->
+<!--            <class name="PercyTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>

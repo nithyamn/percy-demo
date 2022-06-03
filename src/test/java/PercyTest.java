@@ -16,44 +16,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class PercyTest {
-    //@Parameters({"test_name","url"})
-    //@Test
-    public void test(String test_name, String url) throws Exception {
-        //System.setProperty("webdriver.chrome.driver", "/Users/nithyamani/Desktop/Tools/chromedrivers/chromedriver100");
-        ArrayList<Integer> widths = new ArrayList();
-        //widths.add(200);
-//        widths.add("300");
-//        widths.add("400");
-
-        //WebDriver driver = new ChromeDriver();
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browser","chrome");
-        capabilities.setCapability("build","JLP percy");
-        capabilities.setCapability("name","test");
-        WebDriver driver = new RemoteWebDriver(new URL("https://nithyamani3:PsurqC6o6MphBNxyphUy@hub.browserstack.com/wd/hub"),capabilities);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        Percy percySnapshots = new Percy(driver);
-        driver.get(url);
-        Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(By.xpath("//*[@id=\"root\"]/div/header/nav/ul/li[1]/a"))).perform();
-        percySnapshots.snapshot("Main Page "+test_name);
-//        driver.findElement(By.id("postcode")).sendKeys("SE1 2LL");
-//        driver.findElement(By.id("search-address-btn")).click();
-//        Thread.sleep(2000);
-//        driver.findElement(By.cssSelector("button .c-eWMPLj")).click();
-//        driver.findElement(By.id("downshift-0-item-1")).click();
-//
-//        Thread.sleep(3000);
-//        percySnapshots.snapshot("Show button and map", widths, 1024, true);
-
-//        driver.findElement(By.linkText("Contact Us!")).click();
-//        percySnapshots.snapshot("Contact Us Page "+test_name);
-//        percySnapshots.snapshot("contact_us.png");
-        //percySnapshots.snapshot("contact_us.png", widths, 1048,true);
-        Thread.sleep(2000);
-        driver.quit();
-    }
 
     @Parameters({"test_name","url"})
     @Test
@@ -66,6 +28,7 @@ public class PercyTest {
         Percy percySnapshots = new Percy(driver);
         driver.get(url);
         percySnapshots.snapshot("Main Page "+test_name);
+        //percySnapshots.snapshot("name", widths,1024,false,".container{display: none}");
 
         driver.findElement(By.linkText("Contact Us!")).click();
         percySnapshots.snapshot("Contact Us Page "+test_name);
@@ -74,4 +37,26 @@ public class PercyTest {
         driver.quit();
     }
 
+
+    //@Parameters({"test_name","url"})
+    //@Test
+    public void test(String test_name, String url) throws Exception {
+        String username =  System.getenv("BROWSERSTACK_USERNAME");
+        String accesskey =  System.getenv("BROWSERSTACK_ACCESS_KEY");
+        ArrayList<Integer> widths = new ArrayList();
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browser","chrome");
+        capabilities.setCapability("browser_version","latest");
+        capabilities.setCapability("build","Bstak Percy Integration");
+        capabilities.setCapability("name","test");
+        WebDriver driver = new RemoteWebDriver(new URL("https://"+username+":"+accesskey+"@hub.browserstack.com/wd/hub"),capabilities);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        Percy percySnapshots = new Percy(driver);
+        driver.get(url);
+        percySnapshots.snapshot("Main Page "+test_name);
+        Thread.sleep(2000);
+        driver.quit();
+    }
 }
