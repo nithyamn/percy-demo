@@ -20,7 +20,7 @@ public class PercyTest {
     @Parameters({"test_name","url"})
     @Test
     public void onpremTest(String test_name, String url) throws Exception {
-        System.setProperty("webdriver.chrome.driver", "/Users/nithyamani/Desktop/Tools/chromedrivers/chromedriver100");
+        System.setProperty("webdriver.chrome.driver", "/Users/nithyamani/Desktop/Tools/chromedrivers/chromedriver102");
         ArrayList<Integer> widths = new ArrayList();
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
