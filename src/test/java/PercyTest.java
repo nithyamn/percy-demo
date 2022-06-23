@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
 import java.net.URL;
 import java.sql.Time;
 import java.util.ArrayList;
@@ -15,16 +16,10 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class PercyTest {
-<<<<<<< HEAD
+
     @Parameters({"url"})
     @Test
-    public void test(String url) throws Exception {
-=======
-
-    @Parameters({"test_name","url"})
-    @Test
-    public void onpremTest(String test_name, String url) throws Exception {
->>>>>>> 7dcea2f87c92678ca089a079f324e9ac0e9cb177
+    public void onpremTest(String url) throws Exception {
         System.setProperty("webdriver.chrome.driver", "/Users/nithyamani/Desktop/Tools/chromedrivers/chromedriver102");
         ArrayList<Integer> widths = new ArrayList();
         WebDriver driver = new ChromeDriver();
@@ -32,12 +27,8 @@ public class PercyTest {
 
         Percy percySnapshots = new Percy(driver);
         driver.get(url);
-<<<<<<< HEAD
         percySnapshots.snapshot("Main Page");
-=======
-        percySnapshots.snapshot("Main Page "+test_name);
         //percySnapshots.snapshot("name", widths,1024,false,".container{display: none}");
->>>>>>> 7dcea2f87c92678ca089a079f324e9ac0e9cb177
 
         driver.findElement(By.linkText("Contact Us!")).click();
         percySnapshots.snapshot("Contact Us Page");
@@ -47,9 +38,9 @@ public class PercyTest {
     }
 
 
-    //@Parameters({"test_name","url"})
+    //@Parameters({"url"})
     //@Test
-    public void test(String test_name, String url) throws Exception {
+    public void test(String url) throws Exception {
         String username =  System.getenv("BROWSERSTACK_USERNAME");
         String accesskey =  System.getenv("BROWSERSTACK_ACCESS_KEY");
         ArrayList<Integer> widths = new ArrayList();
@@ -64,7 +55,7 @@ public class PercyTest {
         driver.manage().window().maximize();
         Percy percySnapshots = new Percy(driver);
         driver.get(url);
-        percySnapshots.snapshot("Main Page "+test_name);
+        percySnapshots.snapshot("Main Page");
         Thread.sleep(2000);
         driver.quit();
     }
