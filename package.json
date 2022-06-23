@@ -10,7 +10,7 @@
   "license": "ISC",
   "devDependencies": {},
   "dependencies": {
-    "@percy/cli": "^1.1.4",
+    "@percy/cli": "^1.1.0",
     "supports-color": "^9.0.2"
   }
 }
