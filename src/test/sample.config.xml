@@ -5,7 +5,7 @@
         <parameter name="test_name" value="prod"></parameter>
         <parameter name="url" value="http://localhost:3000/"></parameter>
         <classes>
-            <class name="PercyTest"/>
+            <class name="PercyTest"></class>
         </classes>
     </test>
 <!--    <test name="Sample2">-->

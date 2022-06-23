@@ -7,7 +7,7 @@ snapshot:
   percyCSS: ""
 discovery:
   allowedHostnames: []
-  networkIdleTimeout: 100
+  networkIdleTimeout: 200
   disableCache: false
   launch-options:
     headless: true
