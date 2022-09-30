@@ -52,7 +52,7 @@ public class PercyTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         Percy percySnapshots = new Percy(driver);
-        driver.get("https://www.wearlenses.no/online-help");
+        driver.get("");
         Thread.sleep(2000);
         //driver.switchTo().alert().accept();
 
