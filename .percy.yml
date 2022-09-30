@@ -1,15 +1,16 @@
 version: 2
 snapshot:
   widths:
-    - 375
     - 1280
   minHeight: 1024
-  percyCSS: ""
 discovery:
   allowedHostnames: []
   disallowedHostnames: []
   disableCache: false
-  networkIdleTimeout: 100
+  networkIdleTimeout: 700
+  launch-options:
+    headless: false # default
+  concurrency: 1
 upload:
   files: "**/*.{png,jpg,jpeg}"
   ignore: ""

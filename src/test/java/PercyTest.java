@@ -9,30 +9,28 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+
 import java.net.URL;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class PercyTest {
 
-    @Parameters({"url"})
+    //@Parameters({"url"})
     @Test
-    public void onpremTest(String url) throws Exception {
-        System.setProperty("webdriver.chrome.driver", "/Users/nithyamani/Desktop/Tools/chromedrivers/chromedriver102");
+    public void onpremTest() throws Exception {
+        WebDriverManager.chromedriver().setup();
         ArrayList<Integer> widths = new ArrayList();
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         Percy percySnapshots = new Percy(driver);
-        driver.get(url);
-        percySnapshots.snapshot("Main Page");
-        //percySnapshots.snapshot("name", widths,1024,false,".container{display: none}");
-
-        driver.findElement(By.linkText("Contact Us!")).click();
-        percySnapshots.snapshot("Contact Us Page");
-
+        driver.get("https://bstackdemo.com/signin");
+        percySnapshots.snapshot("test-1.png");
         Thread.sleep(2000);
         driver.quit();
     }
@@ -46,17 +44,20 @@ public class PercyTest {
         ArrayList<Integer> widths = new ArrayList();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browser","chrome");
-        capabilities.setCapability("browser_version","latest");
+        capabilities.setCapability("browser","Safari");
+        capabilities.setCapability("browser_version","14.0");
         capabilities.setCapability("build","Bstak Percy Integration");
         capabilities.setCapability("name","test");
         WebDriver driver = new RemoteWebDriver(new URL("https://"+username+":"+accesskey+"@hub.browserstack.com/wd/hub"),capabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         Percy percySnapshots = new Percy(driver);
-        driver.get(url);
-        percySnapshots.snapshot("Main Page");
+        driver.get("https://www.wearlenses.no/online-help");
         Thread.sleep(2000);
+        //driver.switchTo().alert().accept();
+
+        percySnapshots.snapshot("Main Page");
+
         driver.quit();
     }
 }

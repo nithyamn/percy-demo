@@ -7,11 +7,4 @@
             <class name="PercyTest"/>
         </classes>
     </test>
-<!--    <test name="Sample2">-->
-<!--        <parameter name="test_name" value=""></parameter>-->
-<!--        <parameter name="url" value=""></parameter>-->
-<!--        <classes>-->
-<!--            <class name="PercyTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>
