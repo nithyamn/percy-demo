@@ -34,11 +34,12 @@ public class PercyTest {
 
         driver.get("http://localhost:3000/contact.html");
         percySnapshots.snapshot("Contact Us");
+        
         driver.quit();
     }
 
 
-    //@Parameters({"url"})
+    //@Parameters({"url"})git c
     //@Test
     public void test(String url) throws Exception {
         String username =  System.getenv("BROWSERSTACK_USERNAME");
