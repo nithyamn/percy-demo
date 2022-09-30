@@ -29,9 +29,11 @@ public class PercyTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         Percy percySnapshots = new Percy(driver);
-        driver.get("https://bstackdemo.com/signin");
-        percySnapshots.snapshot("test-1.png");
-        Thread.sleep(2000);
+        driver.get("http://localhost:3000/");
+        percySnapshots.snapshot("About Us");
+
+        driver.get("http://localhost:3000/contact.html");
+        percySnapshots.snapshot("Contact Us");
         driver.quit();
     }
 
