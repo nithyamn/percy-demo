@@ -34,7 +34,7 @@ public class PercyTest {
 
         driver.get("http://localhost:3000/contact.html");
         percySnapshots.snapshot("Contact Us");
-
+        
         driver.quit();
     }
 
